@@ -54,6 +54,13 @@ export class login extends StatefulWidget{
                     <button class="btn btn-primary" id="submit">Submit</button>
                     <div style="color: red" id="error"></div>
                 </div>
+
+                <div style="margin-top: 15px; text-align: center;">
+                    <span>Don't have an account? </span>
+                    <router-link href="/register" style="color: #007bff; font-weight: bold;">Register Here</router-link>
+
+                <div style="color: red; text-align: center; margin-top: 10px;" id="error"></div>
+                </div>
             </form>
     
             </div>`
