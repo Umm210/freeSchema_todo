@@ -52,3 +52,31 @@ input[type="text"] {
     border-radius: 8px;
     margin-bottom: 20px;
 }
+
+.todo-page-container {
+    position: relative;
+    width: 100%;
+    padding-top: 40px;
+}
+
+.todo-header {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+}
+
+.logout-btn {
+    text-decoration: none;
+    color: #dc3545;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    border: 2px solid #dc3545;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: all 0.3s ease-in-out;
+}
+
+.logout-btn:hover {
+    background-color: #dc3545;
+    color: white;
+}

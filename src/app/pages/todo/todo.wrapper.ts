@@ -1,5 +1,3 @@
-// src/app/pages/todo/todo.wrapper.ts
-
 import { StatefulWidget } from 'mftsccs-browser'
 import { CreateTodo } from "./create.todo";
 import { ListTodo } from "./list.todo";
@@ -29,7 +27,13 @@ export class TodoApp extends StatefulWidget {
     }
 
     getHtml(): string {
-        return `<div class="todo-app">
+        return `
+            <div class="todo-page-container">
+                <div class="todo-header">
+                    <router-link href="/logout" class="logout-btn">Logout</router-link>
+                </div>
+
+                <div class="todo-app">
                     <h2 style="text-align:center;">My To-Do List</h2>
                     <div class="flex-container">
                         <div id="widget1"></div>
@@ -37,6 +41,7 @@ export class TodoApp extends StatefulWidget {
                     <div class="flex-container">
                         <div id="widget2"></div>
                     </div>
-                </div>`
+                </div>
+            </div>`
     }
 }

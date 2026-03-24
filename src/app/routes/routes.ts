@@ -21,6 +21,7 @@ const routes: RouteParams[] = [
     path: "/",
     linkLabel: "Home",
     content: TodoApp,
+    isAuthenticated: true
   },
   {
     path: "/login",
