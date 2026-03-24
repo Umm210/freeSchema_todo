@@ -1,29 +1,18 @@
-import { create } from "../pages/example/create.example.ts";
-import { list } from "../pages/example/list.example.ts";
-import { phonebook } from "../pages/example/wrapper.example.ts";
-import homeIndex from "../pages/home/home.index.ts";
+// src/app/routes/routes.ts
+
 import noPageFoundIndex from "../pages/noPageFound/noPageFound.index.ts";
 import { login } from "../pages/user/login.example.ts";
 import { logout } from "../pages/user/logout.example.ts";
 import { register } from "../pages/user/register.example.ts";
-import { classlistAll } from "../pages/classroom/classroomall.index.ts";
+
+import { CreateTodo } from "../pages/todo/create.todo.ts";
+import { ListTodo } from "../pages/todo/list.todo.ts";
+import { TodoApp } from "../pages/todo/todo.wrapper.ts";
 
 type RouteParams = {
-  /**
-   * This is a path for route url
-   */
   path: any;
-  /**
-   * This is a label for the route as a name
-   */
   linkLabel?: string;
-  /**
-   * This is the content that route renders
-   */
   content: any;
-  /**
-   * If path needs to be authenticated. ie. true, false
-   */
   isAuthenticated?: boolean;
 };
 
@@ -31,7 +20,7 @@ const routes: RouteParams[] = [
   {
     path: "/",
     linkLabel: "Home",
-    content: homeIndex,
+    content: TodoApp,
   },
   {
     path: "/login",
@@ -45,33 +34,31 @@ const routes: RouteParams[] = [
   },
   {
     path: "/logout",
-    linkLabel: "Signup",
+    linkLabel: "Logout",
     content: logout,
   },
+  
+  // Todo routes
   {
-    path: "/example",
-    linkLabel: "Example",
-    content: create,
+    path: "/todo",
+    linkLabel: "To-Do List",
+    content: TodoApp,
     isAuthenticated: true
   },
   {
-    path: "/phonebook",
-    linkLabel: "Phonebook",
-    content: phonebook,
+    path: "/todo-create",
+    linkLabel: "Create To-Do",
+    content: CreateTodo,
     isAuthenticated: true
   },
   {
-    path: "/classroom",
-    linkLabel: "Classroom",
-    content: classlistAll,
+    path: "/todo-list",
+    linkLabel: "List To-Do",
+    content: ListTodo,
     isAuthenticated: true
   },
-  {
-    path: "/example-list",
-    linkLabel: "Example",
-    content: list,
-    isAuthenticated: true
-  },
+
+  // 404 Must always be at the bottom
   {
     path: "/404",
     linkLabel: "404",
